@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<!-- 
+知识点一：typeof操作符
+知识点二：javascript的数据类型转换
+Number()转换为数字 String()转换为字符串 Boolean()转换为布尔值
+知识点三：javascript中一共有多少数据类型
+含值的数据类型
+string number boolean object function 
+对象类型
+Object Date Array
+不含值的数据类型
+null undefined
+ -->
+ <script type="text/javascript">
+ // 知识点1实例
+ console.log(typeof("json"));//string
+ console.log(typeof(123));//number
+ console.log(typeof(false));//boolean
+ console.log(typeof(3.14));//number
+ console.log(typeof([1,2,3]));//数组是对象
+ console.log(typeof(true));//boolean
+ console.log(typeof({name : "ss", age : 12}));//boolean
+ console.log(typeof({"name" : "ss", age : 12}));//boolean
+ console.log(typeof(null));//null是一个只有一个值的特殊类型表示一个空对象引用
+ var person = null;//清空对象
+ console.log(typeof(undefined));//undefined也是一个类型
+ var a //没有赋值的变量是undefind类型值也是undefind，任何值都可以使用undefind清空
+//undefined和null值相等  但是类型不同
+ console.log(typeof(NaN));//这个是number类型
+ console.log((123).constructor);//constructor属性返回的是函数的构造函数
+ //知识点二实例
+ console.log(typeof(String(100 + 23)));
+ //toExponential()把对象的值转换为指数计数法。
+ //toFixed()把数字转换为字符串，结果的小数点后有指定位数的数字。
+ //toPrecision()把数字格式化为指定的长度。
+ </script>
+</body>
+</html>

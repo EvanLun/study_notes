@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>cookie</title>
+</head>
+<body onload="checkCookie()">
+<!-- 
+知识点：cookie是曲奇饼干的意思cookie解决的问题是
+当服务器通过HTTP请求向浏览器发送页面的时候，如果连接关闭那么服务器将不会在记录用户的消息。而cookie就是可以直接记录这些数据在下一次访问中就可以直接读取这些数据。
+ -->
+ <!-- 案例欢迎这个用户的再次回来 -->
+ <script type="text/javascript">
+
+//首先设置cookie分别设置的是cookie的名字，值，以及过期时间
+	function setCookie(cname,cvalue,exdays) {
+		var d = new Date();
+		//gitTime是计算从1970年至今有多少时间
+		//setTime在里面添加毫秒数显示现在的时间字符串形式
+		d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+		console.log(d.setTime());
+		var expires = "expires=" + d.toGMTString();
+		//将今天的时间转化为字符串
+		document.cookie = cname + "=" + cvalue + ";" + expires;
+	}
+//获取cookie值
+	function getCookie(cname) {
+		var name = cname + "=";
+		var ca = document.cookie.split(';');
+		for(var i = 0; i < ca.length; i++){
+			var c = ca[i].trim();
+			if (c.indexOf(name) == 0){
+				return c.substring(name.length,c.length);
+			}
+		}
+		return "";
+	}
+ //检测cookie值的函数
+ 	function checkCookie(){
+ 		var username = getCookie("username");
+ 		if(username!=""){
+ 			alert("欢迎再次回来" + username);
+ 		}else{
+ 			username = prompt("请输入你的名字");
+ 			if(username!=""&&username!=null){
+ 				setCookie("username",username,365);
+ 			}
+ 		}
+ 	}
+
+ </script>
+</body>
+</html>

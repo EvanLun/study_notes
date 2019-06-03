@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<!-- 
+知识点1：栅格系统
+主要用于布局分为12列>row行>rol列
+  1行 分为两列一个1一个11
+  <div class="container">
+	<div class="row">
+		<div class="col-lg-1 col-md-6 col-sm-10 col-xs-4">
+ 			<div class="thumbnail">//缩类图如官网
+          		<img src="images/article1.jpg" alt="">
+          		<div class="caption">//存留空袭
+            		<h3>旅游区概况</h3>
+            		<p>盐渎公园位于盐城市区中心地段，占地728亩。</p>
+          		</div>
+        	</div>
+		</div>
+		<div class="col-lg-11 col-md-6 col-sm-2 col-xs-8"></div>
+		</div>
+	</div>
+  </div>
+  1200>=col-lg- 
+  992>=col-md-
+  765>=col-sm-
+  768<=col-xs-
+知识点1.1 列偏移
+	最多偏移12否则没有作用如果你不设置大小那么会默认12 = 偏移量 + 自动补全 
+<div class="container">
+	<div class="row">
+		<div class="col-lg-2 col-lg-offset-2"></div>
+		<div class="col-lg-4"></div>
+		<div class="col-lg-4"></div>
+	</div>
+</div>
+知识点1.2 列排序--->效果是2在后面10在前面 push往后pull往前排序
+<div class="container">
+	<div class="row">
+		<div class="col-lg-2 col-lg-push-10"></div>
+		<div class="col-lg-10 col-lg-pull-2"></div>
+	</div>
+</div>
+知识点1.3 嵌套关系--清除浮动
+<div class="container">
+	<div class="row">
+		<div class="col-lg-6"></div>
+		<div class="col-lg-3"></div>
+		<div class="clearfix"></div>
+		<div class="col-lg-3"></div>
+	</div>
+</div>
+  ========================================
+
+知识点2： 布局
+	全局布局 class='container-fluid'会自带15px的padding不会顶住
+页面
+设置版心布局 class='container'
+（1200 992 768 768下）想强制像素width:1000px !important;
+
+================================================================
+知识点3：响应式工具->针对不同设备隐藏一些东西
+visible-lg-block表示只有在lg范围内显示
+hidden-xs时候隐藏
+<div class="container">
+	<div class="row">
+		<div class="col-lg-2 visible-lg-block"></div>
+		<div class="col-lg-10 hidden-xs"></div>
+	</div>
+</div>
+===============================================================
+知识点4：固定定位和浮动->天猫侧边栏
+pull-left->左浮动  pull-right->右浮动 affix固定定位
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-lg-6" affix></div>
+		<div class="col-lg-6"></div>
+	</div>
+</div>
+==============================================================
+知识点5：字体图标
+要使用投标就要是使用glyphicon glyphicon-search是名称
+<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+==================================================================
+知识点6：预定义样式风格
+1.primary(首选项) 2.success(成功) 3.info(一般信息) 4.warning(警告) 5.danger(危险)
+<input class="btn btn-success" value="成功">
+<div class='bg-success'>背景成功</div>
+<div class='text-success'>文字成功</div>
+<div class='alert alert-success'>警告框</div>
+6.1登录框的案例
+<div class='container'>
+	<div class='panel panel-primary'>
+		<div class='panel-heading'>
+			Login
+		</div>
+		<div class="panel-body">
+		  <div class="form-group">
+			<lable>用户名：</lable><input type='text' class='form-control'>
+			<div class="alert alert-warning">用户名不能为空</div>
+			<lable>密码：</lable>  <input type='password' class='form-control'>
+		  </div>
+		  <input type='button' value='登录'  class="btn btn-primary pull-right">
+		  <a href='#' class='text-primary'>忘记密码？</a>
+		</div>
+	</div>
+</div>
+================================================================================
+知识点7：按钮
+1.所有操作按钮都必须添加btn这是基础类
+2.样式 btn-default(默认) btn-link(链接)
+3.大小 btn-*[lg,sm,xs]
+4.状态 active disabled
+
+<input type='button' value="按钮" class="btn">
+<input type='button' value="按钮" class="btn btn-default">
+<input type='button' value="按钮" class="btn btn-link">
+<input type='button' value="按钮" class="btn lg">
+<input type='button' value="按钮" class="btn sm">
+<input type='text' class="form-control input-sm">
+<input type='button' value="按钮" class="active">
+
+7.1 按钮组
+种类： a , input , button
+块级： btn-block
+按钮组： btn-group , btn-group-justified , btn-group-vertical
+
+<div class="btn-group btn-group-justified">
+	//按钮组的端点对其  根据父容器大小自行填充
+	<a href="#" class="btn btn-primary"></a>
+	<a href="#" class="btn btn-primary"></a>
+	<a href="#" class="btn btn-primary"></a>
+</div>
+
+<div class="btn-group-vertical">
+	//改城纵向按钮组
+	<input type='button' value="按钮" class="btn btn-primary">
+	<input type='button' value="按钮" class="btn btn-primary">
+	<input type='button' value="按钮" class="btn btn-primary">
+</div>
+
+7.2github 按钮组案例
+***/向下的箭头<span class="caret"></span>
+<div class="github自定义类">
+	<div class="btn-group btn-group-sm">
+		<button class="btn btn-default active"><span class="glyphicon glyphicon-search" aria-hidden="true"></span> Watch <span class="caret"></span></button>
+		<button class="btn btn-default "> 3064 </span></button>
+	</div>
+</div>
+
+7.3 下拉菜单
+
+属性：data- , aria- , role
+open
+dropdown-menu-right
+dropdown-header
+divider
+
+***自定义属性 
+data-toggle="dropdown" ->js事件触发下拉列表事件
+aria-haspopup->有弹出
+aria-expanded-菜单隐藏状态
+role="meun"->当前的一种状态
+
+<div class="dropdown open">
+	//加open默认显示
+  <button class="btn btn-default dropdown-toggle" type="button"  data-toggle="dropdown" >
+    Dropdown
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" >   
+    <li><a href="#">Action</a></li>
+    <li><a href="#">Another action</a></li>
+    <li><a href="#">Something else here</a></li>
+    <li role="separator" class="divider"></li>
+    <li><a href="#">Separated link</a></li>
+  </ul>
+</div>
+13和12的案例是导航条有用
+=================================================================
+8标签页
+nav , nav-tabs , nav-justified , nav-tabs-justified ,nav-pills ,
+nav-stacked竖着的
+
+<div class="container-fluid">
+	<ul class="nav nav-tabs nav-justified nav-tabs-justified">
+		<li class=""><a href="#">1</a></li>
+		<li class=""><a href="#">1</a></li>
+		<li class=""><a href="#">1</a></li>
+	</ul>
+</div>
+***13
+***14top栏
+***15导航条
+ -->
+</body>
+</html>

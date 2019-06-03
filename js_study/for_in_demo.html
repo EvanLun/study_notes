@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<!-- 
+知识点: for in语句被用来遍历数组或者对象的属性
+用法 for(变量 in 用法){这里执行代码}
+(左边要求是一个字符串或者是可以转化为字符串 in 右边是对象或者数组)
+
+ -->
+
+<script type="text/javascript">
+   var	a = [1,2,3,4,5,6,7,8];
+   for(i in a){
+   	 console.log(i);
+   }
+//上述表达式会i是字符串打印输出的是索引号
+//vue输出的是每一个数组的内容
+
+//上述如果输出a的话在普通里面将输出6次的数组
+//vue里面将会输出3次的数组值
+
+//for(value , key) in sites
+//vue这里的value 指的是数组里面每一想的值key是索引值
+//v-for="(value, key, index) in object
+//这个里面放的是最想 value是值 key是对象属性 index是索引值
+
+
+</script>
+</body>
+</html>

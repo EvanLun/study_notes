@@ -1,0 +1,12 @@
+1.安装脚手架 cnpm install -g vue-cli 全局下安装脚手架  这个就是有了可以在控制台输入命令的东西了
+2.创建一个基于webpack的项目  cnpm init webpack renlun
+3.切换到cd  你的项目名字
+4.安装依赖  cnpm  install
+
+===============================================
+index.html-->项目根视图
+.postcssrc.js  postcss配置文件
+static 静态文件目录
+src 源码文件
+config  配置文件 针对于服务区上的配置
+build 服务器配置文件

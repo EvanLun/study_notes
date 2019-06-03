@@ -1,0 +1,146 @@
+h5遗漏
+ 
+<table cellspacing='0'--->控制单元格与表格边框之间的距离  cellpadding='0'---> 控制文字在单元格之间的空间大小 align="center"-->表格整体的移动方式>
+   <caption>英语是标题的意思  就是表格标题的意思 </caption>
+     <tr>--->表格的行
+        <thead>--->表头不显示
+           <th></th>---->表头会加粗水平居中显示
+        </thead>  
+  
+        <tbody>----->表格主体部分
+           <td rowspan="2"></td>---->表格的单元格
+        </tbody>
+     </tr>
+</table>
+
+表格跨行合并（| rowspan跨行合并-->删一个合并几个后面数字就是几）跨列合并（-colspan 删一个合并列
+先上  先左
+
+css遗漏
+
+以后所有字体使用 Unicode编码
+
+结构伪类选择器
+li:first-child { 选择的第一个孩子 添加属性}
+li:last-child { 选择的最后一个孩子 添加属性}
+li:nth-child(4) { 选择的第4个孩子 添加属性}
+li:nth-child(odd) { 选择的所有奇数个孩子 添加属性}
+li:nth-child(even) { 选择的所有偶数个孩子 添加属性}
+li:nth-child(n) { 选择的从0开始  2n就是偶数  2n-1就是奇数  添加属性}
+li:nth-last-child(even) { 倒着数选择 添加属性}
+
+目标伪类选择器 
+
+当前状态被选中会有相应的状态：target{ color:red;}
+
+交集选择器
+
+p.red{ font-size:20px;}-->只有p标签里面.red的才能被使用
+
+子元素选择器
+
+.nav > li {只对离自己最近的亲儿子起作用  只选择一级菜单}
+
+属性选择器
+
+a[title]-->a标签里面带有title的会有相关样式改变
+ 
+input[type=text]-->属性等于某个值
+
+div[class^=font]--->font属性值开头 
+div[class$=abd-font]--->font属性值结束为止 
+div[class*=a-font-d]--->font属性值在任意位置 
+
+伪元素选择器
+
+p::first-letter { 改变这个p段落的第一个字的样式}
+p::first-line { 改变这个p段落的第一行字的样式 缩放被挤下来只算第一行}
+p::selection { 拖拉选择文字变换样式}
+div::before{content:"在div盒子内容内部的前面添加内容"；}
+div::after{content:"在div盒子内容内部的后面添加内容"；}
+
+背景
+
+background-repeat: repeat-x repeat-y repeat在纵向和横向平铺;
+
+background-position: top bottom left right;
+
+默认background-position: left top;
+
+background-position: x y;
+
+background-attachment: fixed;字动图不动
+
+简写 background：背景颜色 背景图片url 是否平铺 是否固定 是否定位；
+
+字体半透明color：rgba(0,0,0,0.3)--->a对应本来颜色透明程度；背景透明background-color:rgba(0,0,0,0.3);
+
+
+ps知识
+
+1. Ctrl+j复制图层
+
+2. Ctrl+t自由变换
+
+3. 先确认中点然后按住Ctrl+alt 会以中点为圆心扩大
+
+4. Ctrl+d 取消选区 
+
+5. alt+delete 填充前景色  ctrl+delete填充背景色
+
+6.ctrl++图片放大  ctrl+-图片减小
+
+7.ctrl+alt+i 反选
+
+8.加减选区  加shift+  减alt+
+
+精灵图技术 
+
+本质就是一种处理网页背景图像的方式  减少向服务器请求的次数
+
+ps制作精灵图----》看视频  前提 美工做好设计图
+
+2D变换-移动
+
+transform: translate(x,y);
+transform: translate(50%); //和父亲无关走自己盒子宽度的一半
+transform: translateY(y);==transform: translate(0,y);
+变形：运动；
+
+transform: scale(x,y);
+
+缩放：0.01-0.99
+
+放大：大于1
+
+
+transition: all 0.5s;  平滑过渡是在过渡的本体没变化那个身上加
+transition: all 0.5s 速度曲线 何时开始;过渡属性名称  过渡时间  过渡速度曲线  过渡何时开始
+旋转
+transform: rotate(90deg);旋转度数正数是顺时针负数逆时针围绕中心点旋转
+transform-origin: rotate(90deg);/transform-origin: 30px 30px;设置旋转原点是在原来本体上面添加设置
+倾斜
+transform: skew(90deg,0deg);x y
+border-radius：50%；圆角边框
+
+3D效果 ---》左手法则
+transform: rotateY(30deg);
+transform: rotateX(30deg);
+transform: rotateZ(30deg);
+
+透视---》perspective
+perspective: 500;
+
+移动端开发
+
+<mate name="viewport" />
+
+width  设置视口的宽度  在这块有一个特殊的值content="width = device-width"
+
+initial-scale  设置视口的默认缩放比content="initial-scale = 1.0"
+
+user-scalable 设置视口是否允许用户进行自行缩放content="user-scalable=  0"
+
+minimum-scale 最小缩放比content="minimum-scale=  1.0"
+
+maximum-scale  最大缩放比content="maximum-scale=  1.0"

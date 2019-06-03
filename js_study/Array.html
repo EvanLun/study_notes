@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //  创建数组的第一种方式
+        // var a = new Array();
+        // a[0] = 0;
+        // a[1] = 1;
+        // a[2] = 2;
+        // a[3] = 3;
+        // for(var i = 0; i < a.length; i++){
+        //     console.log(a[i]);
+        // }
+        //创建数组的第二种方法
+        // var a = new Array("home","hodden","qwer");
+        //  for(var i = 0; i < a.length; i++){
+        //      console.log(a[i]);
+        //  }
+        //创建数组的第三种方式
+        // var a = ["home","dde","deed"];
+        // for(var i = 0; i < a.length; i++){
+        //     console.log(a[i]);
+        // }
+        //a.indexOf("home2")的意思就是查找并返回home2在数组中的索引值
+        // var a = ["home","home1","home2"];
+        // for(var i = 0; i < a.length; i++){
+        //     console.log(a[i]);
+        //     console.log(a.indexOf("home2"));
+        // }
+        //关于数组的方法
+        //合并两个数组
+        // var a = ["a","b","c"];
+        // var b = ["d","e","f"];
+        // var e = ["h","i","g"];
+        // var c =e.concat(a,b);
+        // for(var i = 0; i < c.length; i++){
+        //     console.log(c[i]);
+        // }
+        //将数组变成祖字符串
+        // var a = ["a","b","c",5];
+        // var c = a.join();
+        // console.log(typeof(c) + c );
+        //删除数组的最后面一个元素并且返回那个元素值
+        // var a = ["a","b","c"];
+        // console.log(a.pop());
+        //像数组最后面一位添加一个元素如果直接输出的话会输出索引值
+        //  var a = ["a","b","c"];
+        //  console.log(a.push("d"));
+        //  console.log(a);
+        //将一个数组中的元素进行反转数组和字符串都会进行反转
+        // var a = [1,2,3,4,5,6,7,8,9];
+        // var c = a.reverse(a);
+        // console.log(c);
+        //删除数组的第一个元素
+        // var a = ["a","b","c"];
+        // var c = a.shift();
+        // console.log(a);
+        //查找指定的数组元素如果只是一个数字比如是0那么他会检索从0到后的全部数值
+        //    var a = ["a","b","c"];
+        //    var c = a.slice(1,2);
+        //    console.log(c);
+        //对数组的排序按字母顺序排序的
+        //   var a = ["a","b","c","a","e","b"];
+        //   var c = a.sort();
+        //   console.log(c);
+        //对数组里面的数字进行排序
+        //  var a = [2,5,9,8,7,5,6,3,4,5];
+        //  var c = a.sort(function(a,b){return b-a});
+        //  console.log(c);
+        //  在数组固定位置添加一个元素第一个指的是位置，第二个必须是0，第三个是到之后都是要添加的数值
+        // var a = ["a","b","c"];
+        // var c = a.splice(2,0,"d");
+        // console.log(a);
+        //将数组转换为字符串
+        // var a = ["a","b","c"];
+        // var c = a.toString();
+        // console.log(typeof(c) + c);
+        //在数组的开头添加一个新的元素
+            var a = ["a","b","c"];
+            var c = a.unshift("0");
+            console.log(a);
+    </script>
+</body>
+</html>

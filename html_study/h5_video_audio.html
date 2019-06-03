@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<!-- 
+知识点：关于video
+1.video支持的格式
+MP4 = 带有 H.264 视频编码和 AAC 音频编码的 MPEG 4 文件
+WebM = 带有 VP8 视频编码和 Vorbis 音频编码的 WebM 文件
+Ogg = 带有 Theora 视频编码和 Vorbis 音频编码的 Ogg 文件
+*尽量使用ie和Safari只支持MP4
+2.controls 属性用于向浏览器指明页面制作者没有使用脚本生成播放控制器，
+需要浏览器启用本身的播放控制栏。
+3.preload属性表示是不是要预加载属性值有none、metadata、auto默认为auto
+4.autoplay是否自动播放 ture和false两个值
+5.loop 是否循环播放
+===========================================================
+知识点：关于audio
+1.audio支持的格式
+<audio>元素支持三种音频格式文件: MP3, Wav, 和 Ogg:
+*ie9只支持MP3Safari不支持ogg
+2.controls 是控制的属性
+ -->
+<h3 align="center">h5视频和video音频标签audio</h3>
+<video width="300" height="300" controls autoplay="autoplay" loop="loop" preload="none">
+	<source src="xx1.mp4" type="video/mp4">
+</video>
+
+<audio width="200" height="30" controls>
+	<source src="xx\1.mp3" type="audio/mp3">
+</audio>
+</body>
+</html>

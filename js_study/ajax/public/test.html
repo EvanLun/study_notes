@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div class="login">
+   		<h2>登陆</h2>
+   			<div class="inputbox">
+     			<input type="text" name="username" placeholder="用户名" id="user"><br><br>
+     			<input type="password" name="password" placeholder="  密码" id="password">
+   			</div>
+  			<button id="userLogin">登陆</button>
+		</div>
+
+<script type="text/javascript" src="./js/ajax.js"></script>
+<script type="text/javascript">
+    var login = document.getElementById('userLogin');
+    var username = document.getElementById('user');
+    var password = document.getElementById('password');
+    console.log(username);
+    userLogin.onclick = function () { 
+        ajax({
+          url: "/login",
+          type: "get",
+          data: {
+            username: username.value,
+            password: password.value
+          },
+          success: function(data){    //    alert后台返回的参数
+              alert(data);
+          },
+          error: function(){
+            alert('访问失败');
+          }
+      });
+    }
+</script>
+</body>
+</html>
