@@ -1,0 +1,36 @@
+1.创建src源码文件 里面又首页还有入口文件
+然后引入jquery使用es6语法 
+这里就需要使用cnpm安装jquery
+安装 webpack 还有webpack-cli脚手架
+然后配置webpack.config.js的出入口
+2.配置好之后就可以运行了但是发现不能实现自动更新
+这里就需要配置webpack-dev-server在package.json里面
+具体如下
+"dev": "webpack-dev-server  --open --port 8080 --contentBase src --hot
+" 浏览器自动打开 端口号  路径打开地址 是否要热更新
+这个时候就可以使用npm run dev启动了 这里要注意打包好的js文件是在内存里面
+3.如何让首页也存在在首页使用npm下载html-webpack-plugin 然后webpack.config.js
+里面配置plugins: [
+    new htmlWebpackPlugin({
+      template: path.join(__dirname, './src/index.html'),
+      filename: 'index.html'
+    })
+  ]
+插件
+4.给首页加入css样式  将css调用放在 main.js里面使用import './css/index.css'
+引入 然后会发现让你下载使用第三方loader//因为webpack只能打包js文件
+要在webpack.config.js配置所有第三方的匹配规则module: {
+    rules: [
+      { test: /\.txt$/, use: 'raw-loader' }
+    ]
+  }
+写在这个里面  要安装style-loader  css-loader -D
+less要装 cnpm i less  less-loader -D
+安装图片cnpm i loader url-loader file-loader -D
+{ test: /\.(jpg|png|gif|bmp|jpeg)$/, use: 'url-loader?limit=7631&name=[hash:8]-[name].[ext]' }
+安装字体类型 下载bootstrap 要装-S
+5.处理es6语法 要借助第三方loader babel
+要装两套包
+第一套 cnpm i babel-core babel-loader babel-plugin-transform-runtime -D
+第二套 cnpm i babel-preset-env babel-preset-stage-0  @babel/core -D
+配置文件里面添加{ test: /\.js$/, use: 'babel-loader', exclude: /node_modules/ },

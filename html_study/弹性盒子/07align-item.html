@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .faster {
+            height: 600px;
+            width: 900px;
+            border: 1px solid red;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            /* align-items: stretch; 子元素无高时可以进行填充 */
+            /* 在侧轴上进行居中对其 align-items: center; */
+            /* align-items: flex-start; 默认的首部对其 */
+            /* align-items: flex-end; 侧轴的底部对齐 */
+            /* baseline 就是文本设置基线对其 */
+            align-items: center;
+        }
+        .box1,.box2,.box3 {
+            background-color: yellow;
+            height: 200px;
+            width: 200px;
+        }
+        .box2 {
+            background-color: red;
+            font-size: 100px;
+        }
+        .box3 {
+            background-color: blue;
+            align-self: flex-end;
+        }
+    </style>
+</head>
+<body>
+    <div class="faster">
+        <div class="box1">1</div>
+        <div class="box2">wqeq</div>
+        <div class="box3">3</div>
+    </div>
+</body>
+</html>

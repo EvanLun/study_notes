@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .faster {
+            height: 800px;
+            width: 1500px;
+            border: 1px solid red;
+            display: flex;
+            /* 这里就是让盒子变成弹性盒子 */
+            /* justify-content: flex-start; 默认样式所有盒子贴父盒子左边向右显示*/
+            /* justify-content: flex-end;   右边贴边显示先是1-4显示 */
+            /* justify-content: space-between; 14贴边其他均匀显示 */
+            justify-content: space-around;      /* 全部是均匀排列 */
+        }
+        .box1,.box2,.box3,.box4 {
+            background-color: yellow;
+            height: 200px;
+            width: 200px;
+        }
+        .box2 {
+            background-color: red;
+        }
+        .box3 {
+            background-color: blue;
+        }
+        .box4 {
+            background-color: skyblue;
+        }
+    </style>
+</head>
+<body>
+    <div class="faster">
+        <div class="box1">1</div>
+        <div class="box2">2</div>
+        <div class="box3">3</div>
+        <div class="box4">4</div>
+    </div>
+</body>
+</html>

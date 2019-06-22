@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="vue-2.4.0.js"></script>
+</head>
+<body>
+    <div id="app"></div>
+
+<script>
+    var res = {
+        template: "<h2> 私有注册组件</h2>"
+    }
+var vm = new Vue({
+    el: '#app',
+    data: {
+        msg: '我是vue'
+    },
+    methods: {},
+    render: function (createElements) {
+        return createElements (res)
+    }
+
+})  
+</script> 
+</body>
+</html>

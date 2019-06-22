@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .faster {
+            height: 600px;
+            width: 900px;
+            border: 1px solid red;
+            margin: 0 auto;
+            display: flex;
+            /* 这里就是让盒子变成弹性盒子 */
+            /* justify-content: flex-start; 默认样式所有盒子贴父盒子左边向右显示*/
+            /* justify-content: flex-end;   右边贴边显示先是1-4显示 */
+            /* justify-content: space-between; 14贴边其他均匀显示 */
+            justify-content: space-around;      /* 全部是均匀排列 */
+        }
+        .box1,.box2,.box3 {
+            background-color: yellow;
+            height: 200px;
+            width: 200px;
+        }
+        .box2 {
+            background-color: red;
+            flex-grow: 1; /* 默认值为0扩展子元素的要设置在子元素里面 设置当前元素应该占据剩余空间的比例值 */
+        }
+        .box3 {
+            background-color: blue;
+            flex-grow: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="faster">
+        <div class="box1">1</div>
+        <div class="box2">2</div>
+        <div class="box3">3</div>
+    </div>
+</body>
+</html>
